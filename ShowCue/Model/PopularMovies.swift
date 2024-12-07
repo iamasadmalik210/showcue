@@ -11,6 +11,7 @@ import Foundation
 struct MoviesResponse: Codable {
     let page: Int
     let results: [Movie]
+    let total_pages : Int
 }
 
 struct Movie: Codable {
@@ -45,4 +46,6 @@ struct Movie: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    
 }

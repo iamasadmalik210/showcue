@@ -23,8 +23,8 @@ class NetworkManager {
     private init() {}
     
     /// Fetches popular movies
-    func getPopularMovies(completion: @escaping (Result<MoviesResponse, Error>) -> Void) {
-        let urlString = "\(baseURL)/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc"
+    func getPopularMovies(_ page : Int? = nil,completion: @escaping (Result<MoviesResponse, Error>) -> Void) {
+        let urlString = "\(baseURL)/movie/popular?language=en-US&page=\(page ?? 1)"
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.invalidURL))
             return

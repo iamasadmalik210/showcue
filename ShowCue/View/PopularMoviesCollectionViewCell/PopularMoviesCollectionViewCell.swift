@@ -38,6 +38,14 @@ class PopularMoviesCollectionViewCell: UICollectionViewCell {
         bgView.layer.shadowOffset = CGSize(width: 0, height: 2) // Subtle shadow
         bgView.layer.shadowRadius = 4 // Smooth edges
         bgView.layer.masksToBounds = false
+        
+//        self.layer.cornerRadius = 10 // Adjust to your preference
+//        self.layer.shadowColor = UIColor.black.cgColor
+//        self.layer.shadowOpacity = 0.2 // Minimal shadow
+//        self.layer.shadowOffset = CGSize(width: 0, height: 2) // Subtle shadow
+//        self.layer.shadowRadius = 4 // Smooth edges
+//        self.layer.masksToBounds = false
+
 
     }
     

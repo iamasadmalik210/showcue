@@ -37,6 +37,7 @@ class MovieDetailViewController: UIViewController {
     }
     var movieID : Int = 0
     var movieTitle : String = ""
+    var shimmerViews: [UIView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ class MovieDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         initialLoads()
         getMovieDetail()
+        
     }
     func getMovieDetail(){
         DispatchQueue.global().async {
@@ -54,6 +56,7 @@ class MovieDetailViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.movieDetail = movieDetail
                         self.setupUI()
+                        self.stopShimmerEffect()
 
                     }
                 case .failure(let error):
@@ -69,6 +72,7 @@ class MovieDetailViewController: UIViewController {
     func initialLoads(){
         setNavigation()
         setCollectionView()
+        setupShimmerEffect()
     }
     
     func setCollectionView(){
@@ -161,4 +165,47 @@ extension MovieDetailViewController : UICollectionViewDataSource,UICollectionVie
         return cell
         
     }
+    
+    func setupShimmerEffect() {
+           // Add shimmer effect to the views while loading data
+           shimmerViews = [movieTitleLabel, releaseYear, pg, runtime, moviePosterImageView, movieDescription, ratingLabel, totalRating, noOfRatings, rateThisLabel, criticsLabel,moviePosterImageView]
+           
+           for view in shimmerViews {
+               addShimmer(to: view)
+           }
+       }
+
+       // Function to add shimmer effect using gradient layer
+       func addShimmer(to view: UIView) {
+           let shimmerLayer = CAGradientLayer()
+           shimmerLayer.frame = view.bounds
+           shimmerLayer.colors = [UIColor.lightGray.withAlphaComponent(0.2).cgColor, UIColor.lightGray.withAlphaComponent(0.4).cgColor, UIColor.lightGray.withAlphaComponent(0.2).cgColor]
+           shimmerLayer.locations = [0, 0.5, 1]
+           shimmerLayer.startPoint = CGPoint(x: 0, y: 0.5)
+           shimmerLayer.endPoint = CGPoint(x: 1, y: 0.5)
+           
+           // Add animation for shimmer effect
+           let animation = CABasicAnimation(keyPath: "locations")
+           animation.fromValue = [-1.0, -0.5, 0.0]
+           animation.toValue = [1.0, 1.5, 2.0]
+           animation.duration = 1.5
+           animation.repeatCount = .infinity
+           shimmerLayer.add(animation, forKey: "shimmerAnimation")
+           
+           view.layer.addSublayer(shimmerLayer)
+       }
+
+       // Function to remove shimmer effect once data is loaded
+       func stopShimmerEffect() {
+           for view in shimmerViews {
+               if let sublayers = view.layer.sublayers {
+                   for layer in sublayers {
+                       if layer is CAGradientLayer {
+                           layer.removeAllAnimations()
+                           layer.removeFromSuperlayer()
+                       }
+                   }
+               }
+           }
+       }
 }
