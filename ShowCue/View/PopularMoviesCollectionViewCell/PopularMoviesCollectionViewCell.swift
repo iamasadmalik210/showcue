@@ -52,7 +52,8 @@ class PopularMoviesCollectionViewCell: UICollectionViewCell {
     func configureCell(_ movie: Movie) {
         movieName.text = movie.title
         ratingLabel.text = String(format: "%.1f", movie.voteAverage)
-        
+        postImageView.image = nil // Reset image to avoid showing stale data
+
         // Set placeholder image
         postImageView.image = UIImage(named: "placeholderImage")
         
@@ -60,15 +61,29 @@ class PopularMoviesCollectionViewCell: UICollectionViewCell {
         guard let posterPath = movie.posterPath else { return }
         let imageUrlString = "https://image.tmdb.org/t/p/w500\(posterPath)"
         
-        if let cachedImage = imageCache.object(forKey: imageUrlString as NSString) {
-            // Use the cached image if available
-            postImageView.image = cachedImage
-        } else {
-            // Download image if not in cache
-            if let url = URL(string: imageUrlString) {
-                downloadImage(from: url)
-            }
-        }
+        // Check for cached image
+           if let cachedImage = imageCache.object(forKey: imageUrlString as NSString) {
+               postImageView.image = cachedImage
+           } else {
+               // Download image and update cache
+               guard let url = URL(string: imageUrlString) else { return }
+               URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                   guard let self = self,
+                         let data = data,
+                         let image = UIImage(data: data),
+                         error == nil else {
+                       return
+                   }
+                   
+                   // Cache the downloaded image
+                   self.imageCache.setObject(image, forKey: imageUrlString as NSString)
+                   
+                   // Update the image view on the main thread
+                   DispatchQueue.main.async {
+                       self.postImageView.image = image
+                   }
+               }.resume()
+           }
     }
 
     // Function to download and cache image

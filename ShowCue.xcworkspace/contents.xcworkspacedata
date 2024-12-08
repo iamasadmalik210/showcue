@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/mac/Documents/ShowCue/ShowCue/Model/MovieEntity+CoreDataClass.swift">
+      location = "group:ShowCueUnitTests">
    </FileRef>
    <FileRef
-      location = "group:/Users/mac/Documents/ShowCue/ShowCue/Model/MovieEntity+CoreDataProperties.swift">
+      location = "group:MovieEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:MovieEntity+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:ShowCue.xcodeproj">

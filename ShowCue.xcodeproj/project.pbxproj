@@ -22,7 +22,29 @@
 		04EA21642D041D650010D904 /* GenresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA21632D041D650010D904 /* GenresCollectionViewCell.swift */; };
 		04EA21672D0471580010D904 /* MovieModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04EA21652D0471580010D904 /* MovieModel.xcdatamodeld */; };
 		04EA21902D047CFD0010D904 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA218F2D047CFD0010D904 /* CoreDataHelper.swift */; };
+		04EA21942D05979C0010D904 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA21932D05979C0010D904 /* HelperMethods.swift */; };
+		04EA219C2D059DB80010D904 /* ShowCueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA219B2D059DB80010D904 /* ShowCueUITests.swift */; };
+		04EA219E2D059DB80010D904 /* ShowCueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA219D2D059DB80010D904 /* ShowCueUITestsLaunchTests.swift */; };
+		04EA21AC2D05ABF00010D904 /* ShowCueUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA21AB2D05ABF00010D904 /* ShowCueUnitTests.swift */; };
+		04EA21B32D05CC760010D904 /* ShowCueUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA21AB2D05ABF00010D904 /* ShowCueUnitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04EA219F2D059DB80010D904 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04EA21312D037B810010D904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04EA21382D037B810010D904;
+			remoteInfo = ShowCue;
+		};
+		04EA21AD2D05ABF00010D904 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04EA21312D037B810010D904 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04EA21382D037B810010D904;
+			remoteInfo = ShowCue;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04EA21392D037B810010D904 /* ShowCue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowCue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +64,30 @@
 		04EA21632D041D650010D904 /* GenresCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCollectionViewCell.swift; sourceTree = "<group>"; };
 		04EA21662D0471580010D904 /* MovieModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieModel.xcdatamodel; sourceTree = "<group>"; };
 		04EA218F2D047CFD0010D904 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		04EA21932D05979C0010D904 /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		04EA21992D059DB80010D904 /* ShowCueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowCueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EA219B2D059DB80010D904 /* ShowCueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCueUITests.swift; sourceTree = "<group>"; };
+		04EA219D2D059DB80010D904 /* ShowCueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCueUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04EA21A92D05ABF00010D904 /* ShowCueUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowCueUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EA21AB2D05ABF00010D904 /* ShowCueUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCueUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		04EA21362D037B810010D904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EA21962D059DB80010D904 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EA21A62D05ABF00010D904 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				04EA213B2D037B810010D904 /* ShowCue */,
+				04EA219A2D059DB80010D904 /* ShowCueUITests */,
+				04EA21AA2D05ABF00010D904 /* ShowCueUnitTests */,
 				04EA213A2D037B810010D904 /* Products */,
 				9643E9DC639C10A940872862 /* Pods */,
 			);
@@ -68,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				04EA21392D037B810010D904 /* ShowCue.app */,
+				04EA21992D059DB80010D904 /* ShowCueUITests.xctest */,
+				04EA21A92D05ABF00010D904 /* ShowCueUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +121,8 @@
 		04EA213B2D037B810010D904 /* ShowCue */ = {
 			isa = PBXGroup;
 			children = (
+				04EA21922D05978D0010D904 /* HelperMethods */,
+				04EA21912D05978D0010D904 /* New Group */,
 				04EA21572D0381F30010D904 /* NetworkMannager */,
 				04EA21502D037BAA0010D904 /* Model */,
 				04EA21512D037BAF0010D904 /* View */,
@@ -143,6 +191,38 @@
 			path = GenresCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		04EA21912D05978D0010D904 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		04EA21922D05978D0010D904 /* HelperMethods */ = {
+			isa = PBXGroup;
+			children = (
+				04EA21932D05979C0010D904 /* HelperMethods.swift */,
+			);
+			path = HelperMethods;
+			sourceTree = "<group>";
+		};
+		04EA219A2D059DB80010D904 /* ShowCueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04EA219B2D059DB80010D904 /* ShowCueUITests.swift */,
+				04EA219D2D059DB80010D904 /* ShowCueUITestsLaunchTests.swift */,
+			);
+			path = ShowCueUITests;
+			sourceTree = "<group>";
+		};
+		04EA21AA2D05ABF00010D904 /* ShowCueUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				04EA21AB2D05ABF00010D904 /* ShowCueUnitTests.swift */,
+			);
+			path = ShowCueUnitTests;
+			sourceTree = "<group>";
+		};
 		9643E9DC639C10A940872862 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +250,42 @@
 			productReference = 04EA21392D037B810010D904 /* ShowCue.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04EA21982D059DB80010D904 /* ShowCueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EA21A12D059DB80010D904 /* Build configuration list for PBXNativeTarget "ShowCueUITests" */;
+			buildPhases = (
+				04EA21952D059DB80010D904 /* Sources */,
+				04EA21962D059DB80010D904 /* Frameworks */,
+				04EA21972D059DB80010D904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04EA21A02D059DB80010D904 /* PBXTargetDependency */,
+			);
+			name = ShowCueUITests;
+			productName = ShowCueUITests;
+			productReference = 04EA21992D059DB80010D904 /* ShowCueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		04EA21A82D05ABF00010D904 /* ShowCueUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EA21AF2D05ABF00010D904 /* Build configuration list for PBXNativeTarget "ShowCueUnitTests" */;
+			buildPhases = (
+				04EA21A52D05ABF00010D904 /* Sources */,
+				04EA21A62D05ABF00010D904 /* Frameworks */,
+				04EA21A72D05ABF00010D904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04EA21AE2D05ABF00010D904 /* PBXTargetDependency */,
+			);
+			name = ShowCueUnitTests;
+			productName = ShowCueUnitTests;
+			productReference = 04EA21A92D05ABF00010D904 /* ShowCueUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,6 +298,14 @@
 				TargetAttributes = {
 					04EA21382D037B810010D904 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					04EA21982D059DB80010D904 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 04EA21382D037B810010D904;
+					};
+					04EA21A82D05ABF00010D904 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 04EA21382D037B810010D904;
 					};
 				};
 			};
@@ -199,6 +323,8 @@
 			projectRoot = "";
 			targets = (
 				04EA21382D037B810010D904 /* ShowCue */,
+				04EA21982D059DB80010D904 /* ShowCueUITests */,
+				04EA21A82D05ABF00010D904 /* ShowCueUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +340,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04EA21972D059DB80010D904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EA21A72D05ABF00010D904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -223,6 +363,7 @@
 			files = (
 				04EA21592D0382000010D904 /* NetworkManager.swift in Sources */,
 				04EA21612D041BF60010D904 /* MovieDetailViewController.swift in Sources */,
+				04EA21942D05979C0010D904 /* HelperMethods.swift in Sources */,
 				04EA215B2D0383D10010D904 /* HelperClass.swift in Sources */,
 				04EA21542D037FB80010D904 /* PopularMovies.swift in Sources */,
 				04EA21412D037B810010D904 /* PopularMoviesViewController.swift in Sources */,
@@ -236,7 +377,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04EA21952D059DB80010D904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EA219C2D059DB80010D904 /* ShowCueUITests.swift in Sources */,
+				04EA219E2D059DB80010D904 /* ShowCueUITestsLaunchTests.swift in Sources */,
+				04EA21B32D05CC760010D904 /* ShowCueUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EA21A52D05ABF00010D904 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EA21AC2D05ABF00010D904 /* ShowCueUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04EA21A02D059DB80010D904 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04EA21382D037B810010D904 /* ShowCue */;
+			targetProxy = 04EA219F2D059DB80010D904 /* PBXContainerItemProxy */;
+		};
+		04EA21AE2D05ABF00010D904 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04EA21382D037B810010D904 /* ShowCue */;
+			targetProxy = 04EA21AD2D05ABF00010D904 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04EA21422D037B810010D904 /* Main.storyboard */ = {
@@ -433,6 +605,72 @@
 			};
 			name = Release;
 		};
+		04EA21A22D059DB80010D904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myproject.showcue.ShowCueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShowCue;
+			};
+			name = Debug;
+		};
+		04EA21A32D059DB80010D904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myproject.showcue.ShowCueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShowCue;
+			};
+			name = Release;
+		};
+		04EA21B02D05ABF00010D904 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myproject.showcue.ShowCueUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowCue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShowCue";
+			};
+			name = Debug;
+		};
+		04EA21B12D05ABF00010D904 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myproject.showcue.ShowCueUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShowCue.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShowCue";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -450,6 +688,24 @@
 			buildConfigurations = (
 				04EA214E2D037B830010D904 /* Debug */,
 				04EA214F2D037B830010D904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04EA21A12D059DB80010D904 /* Build configuration list for PBXNativeTarget "ShowCueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EA21A22D059DB80010D904 /* Debug */,
+				04EA21A32D059DB80010D904 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04EA21AF2D05ABF00010D904 /* Build configuration list for PBXNativeTarget "ShowCueUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EA21B02D05ABF00010D904 /* Debug */,
+				04EA21B12D05ABF00010D904 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

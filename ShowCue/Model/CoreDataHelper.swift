@@ -9,6 +9,12 @@ import Foundation
 import CoreData
 import UIKit
 
+protocol CoreDataHelperProtocol {
+    func saveMovies(_ movies: [Movie])
+    func fetchMovies() -> [Movie]
+}
+
+
 class CoreDataHelper {
     static let shared = CoreDataHelper()
     private init() {}
@@ -35,5 +41,19 @@ class CoreDataHelper {
                 print("Failed to save Core Data: \(error)")
             }
         }
+    }
+}
+
+class MockCoreDataHelper: CoreDataHelperProtocol {
+     var mockMovies: [Movie] = []
+    
+    func saveMovies(_ movies: [Movie]) {
+        // Simulate saving movies
+        mockMovies = movies
+    }
+
+    func fetchMovies() -> [Movie] {
+        // Simulate fetching movies
+        return mockMovies
     }
 }

@@ -13,30 +13,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var moviesCollectionView : UICollectionView!
     
-    var currentPage = 1
-    var totalPages = 1
-    var isFetching = false // Prevent multiple simultaneous API calls
-    
-
-    
     var popularMovies  = [Movie](){
         didSet{
             moviesCollectionView.reloadData()
         }
     }
+    var currentPage = 1
+    var totalPages = 1
+    var isFetching = false // Prevent multiple simultaneous API calls
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initialLoads()
-        
+        moviesCollectionView.accessibilityIdentifier = "moviesCollectionView"
+
     }
-    
+   
     func initialLoads() {
         setCollectionView()
 
         if isNetworkAvailable() {
             fetchMovies(page: currentPage)
         } else {
+//            showNoInternetAlert(on: self) {
+//                self.fetchMovies(page: self.currentPage)
+//                       }
             fetchMoviesFromCoreData()
         }
     }
@@ -70,46 +71,7 @@ class ViewController: UIViewController {
         fetchMovies(page: currentPage) // Fetch the first page
     }
     
-//    func fetchMovies(page: Int) {
-//            guard !isFetching && page <= totalPages else { return }
-//            isFetching = true
-//            
-//            DispatchQueue.global().async {
-//                NetworkManager.shared.getPopularMovies(page) { result in
-//                    switch result {
-//                    case .success(let moviesResponse):
-//                        DispatchQueue.main.async {
-//                            self.popularMovies.append(contentsOf: moviesResponse.results)
-//                            self.totalPages = moviesResponse.total_pages
-//                            self.isFetching = false
-//                            self.currentPage += 1
-//                        }
-//                    case .failure(let error):
-//                        print("Error fetching movies:", error)
-//                        self.isFetching = false
-//                    }
-//                }
-//            }
-//        }
-    
-//    func getPopularMovies(){
-//        DispatchQueue.global().async {
-//            NetworkManager.shared.getPopularMovies { result in
-//                switch result {
-//                case .success(let moviesResponse):
-//                    print("Popular Movies:", moviesResponse.results)
-//                    DispatchQueue.main.async {
-//                        self.popularMovies = moviesResponse.results
-//
-//                    }
-//                case .failure(let error):
-//                    print("Error fetching popular movies:", error)
-//                }
-//            }
-//        }
-//        
-//
-//    }
+
 
 }
 
@@ -180,6 +142,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
             if let existingMovie = try? context.fetch(fetchRequest).first {
                 // Update existing record
+                existingMovie.id = Int64(Int32(movie.id))
+                existingMovie.voteAverage = movie.voteAverage
                 existingMovie.title = movie.title
                 existingMovie.posterImage = movie.posterPath
             } else {
@@ -187,6 +151,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                 let newMovie = MovieEntity(context: context)
                 newMovie.id = Int64(Int32(movie.id))
                 newMovie.title = movie.title
+                newMovie.voteAverage = movie.voteAverage
                 newMovie.posterImage = movie.posterPath
             }
         }
@@ -219,7 +184,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
                     releaseDate: "", // Default for missing field
                     title: storedMovie.title ?? "", // Map from Core Data
                     video: false, // Default for missing field
-                    voteAverage: 0.0, // Default for missing field
+                    voteAverage: storedMovie.voteAverage, // Default for missing field
                     voteCount: 0 // Default for missing field
                 )
             }

@@ -12,16 +12,20 @@ enum NetworkError: Error {
     case noData
 }
 
+protocol NetworkServiceProtocol {
+    func getPopularMovies(_ page: Int, completion: @escaping (Result<MoviesResponse, Error>) -> Void)
+}
+
 
 class NetworkManager {
-    static let shared = NetworkManager()
+    static var shared = NetworkManager()
     
     private let baseURL = "https://api.themoviedb.org/3"
     private let apiKey = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYzhhY2RiNDVkMTcwNjhiZjA2MjZhNjI3NGI2MDRmZSIsIm5iZiI6MTczMzQ4ODE3OC4xNzUsInN1YiI6IjY3NTJlZTMyMzQ5NGNjOWJmYmM2MmQ2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.hPAaUZPmNzR7OdXENEmy6NhORgZ4vn4JbWxpp-MApGk"
     private let session = URLSession.shared
     
-    private init() {}
-    
+    init() { } // Remove 'private' to make it accessible
+
     /// Fetches popular movies
     func getPopularMovies(_ page : Int? = nil,completion: @escaping (Result<MoviesResponse, Error>) -> Void) {
         let urlString = "\(baseURL)/movie/popular?language=en-US&page=\(page ?? 1)"
@@ -82,5 +86,21 @@ class NetworkManager {
                 completion(.failure(error))
             }
         }.resume()
+    }
+}
+
+class MockNetworkManager: NetworkManager {
+    var mockResult: Result<MoviesResponse, Error>?
+     
+    
+     override init() {
+         super.init()
+         // Additional setup for the mock, if needed
+     }
+     
+    func getPopularMovies(_ page: Int, completion: @escaping (Result<MoviesResponse, Error>) -> Void) {
+        if let result = mockResult {
+            completion(result)
+        }
     }
 }

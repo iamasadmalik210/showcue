@@ -7,62 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2FF44055-8564-412A-B322-19D0451F7A3E"
+            uuid = "6BC10685-4BC5-4464-9F68-EA1CB59793E2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ShowCue/Controller/MovieDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getMovieDetail()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2FF44055-8564-412A-B322-19D0451F7A3E - 6e2397337c536c59"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;ShowCue.MovieDetail, Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ShowCue.MovieDetailViewController.getMovieDetail() -&gt; ()"
-                  moduleName = "ShowCue"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/ShowCue/ShowCue/Controller/MovieDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
-               </Location>
-               <Location
-                  uuid = "2FF44055-8564-412A-B322-19D0451F7A3E - 87dea5800fb2f93b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;ShowCue.MovieDetail, Swift.Error&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in ShowCue.MovieDetailViewController.getMovieDetail() -&gt; ()"
-                  moduleName = "ShowCue"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mac/Documents/ShowCue/ShowCue/Controller/MovieDetailViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2D279E75-1AEA-4E27-82E0-EDBCF7A86236"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ShowCue/Controller/PopularMoviesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "fetchMoviesFromCoreData()"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
